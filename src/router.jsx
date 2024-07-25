@@ -7,13 +7,15 @@ import DashboardForm from "./pages/DashboardForm";
 import {
     createBrowserRouter,
     Route,
-    createRoutesFromElements
+    createRoutesFromElements,
+    Navigate
 } from "react-router-dom";
 
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<DashboardMainLayout />}>
+            <Route index element={<Navigate to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="elements" element={<DashboardElement />} />
             <Route path="tables" element={<DashboardTable />} />
